@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract CustomToken is ERC20 {
+contract DoopieDoo is ERC20 {
     uint256 public constant INITIAL_SUPPLY = 10000; // Initial supply of tokens
     uint256 public constant INITIAL_PRICE = 100000; // Initial price of the token (in wei)
     uint256 public constant PRICE_MULTIPLIER = 1000; // Price multiplier
@@ -11,7 +11,7 @@ contract CustomToken is ERC20 {
     uint256 public totalTokensSold;
     uint256 public tokenPrice;
 
-    constructor() ERC20("CustomToken", "CTK") {
+    constructor() ERC20("DoopieDoo", "DOOP") {
         _mint(msg.sender, INITIAL_SUPPLY);
         totalTokensSold = 0;
         tokenPrice = INITIAL_PRICE;
