@@ -11,6 +11,13 @@ contract CRITR is ERC20 {
     uint256 public totalTokensSold;
     uint256 public tokenPrice;
 
+    event TokenSwapInitiated(
+        address indexed sender,
+        address indexed recipient,
+        address indexed token,
+        uint256 amount
+    );
+
     constructor() ERC20("CRITR", "CRITR") {
         _mint(msg.sender, INITIAL_SUPPLY);
         totalTokensSold = 0;
@@ -61,5 +68,10 @@ contract CRITR is ERC20 {
         require(address(this).balance >= ethAmount, "Contract does not have enough ETH");
         _burn(msg.sender, amount);
         payable(msg.sender).transfer(ethAmount);
+    }
+
+    // Function to initiate a token swap
+    function initiateTokenSwap(address recipient, address token, uint256 amount) public {
+        emit TokenSwapInitiated(msg.sender, recipient, token, amount);
     }
 }
