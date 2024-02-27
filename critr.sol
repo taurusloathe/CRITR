@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 contract CRITR is ERC20 {
     uint256 public constant INITIAL_SUPPLY = 10000; // Initial supply of tokens
     uint256 public constant INITIAL_PRICE = 1000000000000000; // Initial price of the token (in wei)
-    uint256 public constant PRICE_MULTIPLIER = 1000000; // Price multiplier
+    uint256 public constant PRICE_MULTIPLIER = 100000; // Price multiplier
 
     uint256 public totalTokensSold;
     uint256 public tokenPrice;
