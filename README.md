@@ -1,5 +1,5 @@
 # CRITR Smart Contract
-Smart contract currently under development stage you will be able to deploy in Remix with your own name and parameters to increase liquidity in ETH based tokens.
+Smart contract layout for personal use, currently under development, you will be able to deploy in Remix with your own name and parameters to increase liquidity in ETH based tokens.
 # ⚠️ WARNING ⚠️ 
 Disclaimer:
 THE GENERAL LAYOUT OF THIS SMART CONTRACT IS INTENDED FOR YOUR OWN PERSONAL USE. YOU MAY NOT DEPLOY THIS SOLIDITY BASED CONTRACT WITH THE SAME TOKEN NAME, SYMBOL OR IMAGE DISPLAYED ON THIS PAGE (you cant call it "CRITR"). IF YOU DEPLOY THE CONTRACT, YOU MAY NOT LIST THE TOKENS IT CREATES ON ANY EXCHANGE OR OFFER THE PUBLIC TO PURCHASE, AS IT IS NOT INTENDED FOR PUBLIC TRADING. IT WILL NOT WORK CORRECTLY UNLESS YOU MODIFY THE VARIABLES AND FUNCTIONS. DO NOT USE UNETHICALLY. 
