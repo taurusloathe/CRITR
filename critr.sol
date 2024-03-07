@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-
 contract CRITR is ERC20 {
     uint256 public constant INITIAL_SUPPLY = 10000; // Initial supply of tokens
     uint256 public constant INITIAL_PRICE = 1000000000000000; // Initial price of the token (in wei)
