@@ -74,4 +74,9 @@ contract CRITR is ERC20 {
     function initiateTokenSwap(address recipient, address token, uint256 amount) public {
         emit TokenSwapInitiated(msg.sender, recipient, token, amount);
     }
+
+    // Function to specify the number of decimals for the token
+    function decimals() public view override returns (uint8) {
+        return 6;
+    }
 }
