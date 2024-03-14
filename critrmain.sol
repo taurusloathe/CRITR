@@ -164,11 +164,61 @@ contract CRITR is ERC20, ReentrancyGuard {
         } 
     } 
   
-    // Placeholder function to fetch user addresses from your social network data 
-    function getUsersFromSocialNetwork() internal view returns (address[] memory) { 
-        // Implement your logic to fetch user addresses from your social network data 
-        // This is just a placeholder, replace it with your actual implementation 
-        address[] memory users = new address[](totalUsers); // Assuming totalUsers is maintained elsewhere 
-        return users; 
-    } 
+    // Define a struct to store user profiles
+struct UserProfile {
+    address walletAddress; // Ethereum wallet address associated with the user's profile
+    bool isActive; // Flag to indicate if the user's profile is active
 }
+
+// Mapping to store user profiles
+mapping(address => UserProfile) public userProfiles;
+
+// Event to notify when a user profile is created
+event UserProfileCreated(address indexed user, address indexed walletAddress);
+
+// Function to create or update a user profile
+function createUserProfile(address _user, address _walletAddress) external {
+    require(_user != address(0), "Invalid user address");
+    require(_walletAddress != address(0), "Invalid wallet address");
+
+    // Check if the user already has a profile
+    if (!userProfiles[_user].isActive) {
+        // Create a new user profile
+        userProfiles[_user] = UserProfile(_walletAddress, true);
+        emit UserProfileCreated(_user, _walletAddress);
+    } else {
+        // Update the user's wallet address
+        userProfiles[_user].walletAddress = _walletAddress;
+    }
+}
+
+// Function to fetch active user addresses from your social network data
+function getUsersFromSocialNetwork() internal view returns (address[] memory) {
+    // Initialize an array to store active user addresses
+    address[] memory activeUsers = new address[](totalUsers);
+    uint256 index = 0;
+
+    // Iterate through user profiles and add active users to the array
+    for (uint256 i = 0; i < totalUsers; i++) {
+        address user = getUserAtIndex(i);
+        if (userProfiles[user].isActive) {
+            activeUsers[index] = userProfiles[user].walletAddress;
+            index++;
+        }
+    }
+
+    // Resize the array to remove any unused slots
+    assembly {
+        mstore(activeUsers, index)
+    }
+
+    return activeUsers;
+}
+
+// Function to get user address at a specific index (assuming totalUsers is maintained elsewhere)
+function getUserAtIndex(uint256 _index) internal view returns (address) {
+    // Implement your logic to retrieve user addresses based on the index
+    // This function depends on how you manage user data in your social network
+    // Return user address at the specified index
+}
+
