@@ -63,7 +63,7 @@ contract CRITR is ERC20, ReentrancyGuard {
     // Exponential bonding curve function to adjust token price 
     function exponentialCurve(uint256 tokensSold) internal pure returns (uint256) { 
         // Exponential curve: price increases exponentially with tokens sold 
-        return INITIAL_PRICE * (2 ** (tokensSold / 1000)); // Adjust the curve parameters as needed 
+        return INITIAL_PRICE * (2 ** (tokensSold / 100)); // Adjust the curve parameters as needed 
     } 
   
     // Buy tokens by sending Ethereum to the contract 
