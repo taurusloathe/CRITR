@@ -8,6 +8,11 @@ contract PriceOracle is Ownable {
 
     event PriceUpdated(uint256 newPrice);
 
+    // Constructor with initial owner address
+    constructor(address initialOwner) Ownable(initialOwner) {
+        // Additional initialization if needed
+    }
+
     // Update the price by the owner
     function updatePrice(uint256 _newPrice) external onlyOwner {
         price = _newPrice;
