@@ -16,6 +16,7 @@ contract CRITR is ERC20, ReentrancyGuard {
 
     // Constants
     uint256 public constant INITIAL_SUPPLY = 10000 * (10 ** 18); // Initial supply of tokens (multiplying by 10^18 to account for decimals)
+    uint256 public constant INITIAL_PRICE = 10000000000000; // Initial price of the token (in wei) 
     uint256 public constant TOKENS_PER_MONTH_PER_USER = 1; // Number of tokens vested per month per user
 
     // State variables
