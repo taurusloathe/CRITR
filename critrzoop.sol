@@ -120,7 +120,7 @@ contract CRITR is ERC20, ReentrancyGuard {
             amountIn,
             0, // Accept any amount of the other token
             path,
-            address(this), // Receive the swapped tokens back to this contract
+            msg.sender, // Receive the swapped tokens back to this contract
             block.timestamp + 1800 // Deadline for the swap (30 minutes)
         ) {
             emit TokensSwapped(msg.sender, address(this), tokenOut, amountIn, 0);
