@@ -4,23 +4,31 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract PriceOracle is Ownable {
-    uint256 private price;
+    uint256 public tokenPrice;
+    address public authorizedSource;
 
     event PriceUpdated(uint256 newPrice);
 
-    // Constructor with initial owner address
-    constructor(address initialOwner) Ownable(initialOwner) {
-        // Additional initialization if needed
+    constructor(address _authorizedSource) {
+        authorizedSource = _authorizedSource;
     }
 
-    // Update the price by the owner
-    function updatePrice(uint256 _newPrice) external onlyOwner {
-        price = _newPrice;
-        emit PriceUpdated(_newPrice);
+    function updatePrice(uint256 newPrice) external onlyOwner {
+        require(newPrice > 0, "Price must be greater than zero");
+        tokenPrice = newPrice;
+        emit PriceUpdated(newPrice);
     }
 
-    // Get the current price
     function getPrice() external view returns (uint256) {
-        return price;
+        return tokenPrice;
+    }
+
+    function setAuthorizedSource(address _authorizedSource) external onlyOwner {
+        authorizedSource = _authorizedSource;
+    }
+
+    modifier onlyAuthorizedSource() {
+        require(msg.sender == authorizedSource, "Caller is not the authorized source");
+        _;
     }
 }
