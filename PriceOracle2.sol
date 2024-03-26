@@ -54,4 +54,14 @@ contract PriceOracle is Ownable, IPriceOracle {
         require(authorizedDEX[msg.sender], "Caller is not an authorized DEX");
         _;
     }
+
+    // Function to calculate the token price in US dollars
+    function getPriceInUSD(uint256 ethPriceUSD) external view returns (uint256) {
+        return tokenPrice * ethPriceUSD / 1e18; // Assuming ethPriceUSD is in wei
+    }
+
+    // Function to calculate the token price in ETH
+    function getPriceInETH() external view returns (uint256) {
+        return tokenPrice / 1e18; // Token price already in wei
+    }
 }
