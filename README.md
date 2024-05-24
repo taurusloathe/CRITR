@@ -4,7 +4,7 @@ A savings app for the disabled under construction that increases exponentially i
 The app deploys a factory smart contract that deploys a token contract and a price oracle contract simultaneously. Before deployment, the app user will be able to customize the name of their savings token in the apps user interface, then the app will deploy their token to the ETH blockchain, allowing for the app user to purchase their own tokens.
 The app user can exchange their tokens for Ethereum, or any ERC-20 based token in Uniswap.
 # How it works:
-The token contract that is deployed uses an exponential bonding curve that raises the price of the token the user deployed and purchased, so everytime the user adds more to their account (buys more of their token), their initial deposit value increases exponentially.
+The token contract that is deployed by users leverages an exponential bonding curve with a divisor of 500 that raises the price of the users' token. Everytime the user adds more to their account (buys more of their own token), their initial deposit value increases exponentially.
 # Updates:
 # Cross-Chain Bridge
 The constructor of the token contract deployed deployed from the factory contract now initializes the Wormhole bridge contract and the Solana chain ID, allowing users to exchange the token they deploy for Solana.
