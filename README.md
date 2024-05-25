@@ -8,6 +8,7 @@ The token contract that is deployed by users leverages an exponential bonding cu
 ![1000021157](https://github.com/taurusloathe/CRITR-App/assets/110080228/89333138-ea05-4375-882e-0dc6ee6f522f)
 
 Run the provided python file 'token_price_calculator.py' to calculate how many of your tokens to purchase to reach your personal price target.
+
 ![1000021158](https://github.com/taurusloathe/CRITR-App/assets/110080228/550a48a7-40be-4884-980e-2a33c60f2981)
 
 # Updates:
