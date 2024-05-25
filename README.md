@@ -13,7 +13,8 @@ Run the provided python file 'token_price_calculator.py' to calculate how many o
 
 # Updates:
 # Wormhole SDK Cross-Chain Bridge Integration 
-The constructor of the token contract deployed from the factory contract will initialize the Wormhole bridge contract and the Solana chain ID, allowing users to exchange the token they deploy for Solana.
+The constructor of the token contract deployed from the factory contract will initialize the Wormhole bridge contract and the Solana chain ID, allowing users to exchange the token they deploy for Solana and other tokens. 
+https://www.npmjs.com/package/@certusone/wormhole-sdk
 ![1000021087](https://github.com/taurusloathe/CRITR/assets/110080228/0c2886e8-6534-447f-b7de-8a764e1d8b58)
 ![1000021176](https://github.com/taurusloathe/CRITR/assets/110080228/899ba30d-1dd5-4213-9fc2-f2c69b7a9390)
 ![1000021177](https://github.com/taurusloathe/CRITR/assets/110080228/71329df7-a7db-4d0d-b410-88bfef3df253)
