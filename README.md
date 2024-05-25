@@ -7,6 +7,9 @@ The app user can exchange their tokens for Ethereum, or any ERC-20 based token i
 The token contract that is deployed by users leverages an exponential bonding curve with a divisor of 500 that raises the price of the users' token. Everytime the user adds more to their account (buys more of their own token), their initial deposit value increases exponentially.
 ![1000021157](https://github.com/taurusloathe/CRITR-App/assets/110080228/7078ef0d-1bcb-44e2-ad05-d316f732df1f)
 
+Run the token_price_calculator.py file to calculate how many tokens to purchase to reach your personal price target.
+![1000021158](https://github.com/taurusloathe/CRITR-App/assets/110080228/550a48a7-40be-4884-980e-2a33c60f2981)
+
 # Updates:
 # Cross-Chain Bridge
 The constructor of the token contract deployed deployed from the factory contract now initializes the Wormhole bridge contract and the Solana chain ID, allowing users to exchange the token they deploy for Solana.
