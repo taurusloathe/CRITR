@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRITR</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298, #8e44ad);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 5px 5px 0 #000;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-size: 1em;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="password"] {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+        input::placeholder {
+            color: #ffffff;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #4caf50;
+            color: #ffffff;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .logo {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/CRITR App/Polish_20240225_192414755.png" alt="CRITR Logo" class="logo">
+        <h1>CRITR</h1>
+        <form id="deployForm">
+            <input type="text" id="tokenName" placeholder="Token Name" required>
+            <input type="text" id="tokenSymbol" placeholder="Token Symbol" required>
+            <input type="number" id="initialSupply" placeholder="Initial Supply" required>
+            <input type="text" id="uniswapRouterAddress" placeholder="Uniswap Router Address" required>
+            <input type="text" id="wormholeAddress" placeholder="Wormhole Address" required>
+            <input type="number" id="solanaChainId" placeholder="Solana Chain ID" required>
+            <input type="text" id="uniswapxRouterAddress" placeholder="UniswapX Router Address" required>
+            <input type="text" id="userAccount" placeholder="Your Ethereum Account" required>
+            <input type="password" id="privateKey" placeholder="Your Private Key" required>
+            <button type="submit">Deploy Contracts</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('deployForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const data = {
+                tokenName: document.getElementById('tokenName').value,
+                tokenSymbol: document.getElementById('tokenSymbol').value,
+                initialSupply: document.getElementById('initialSupply').value,
+                uniswapRouterAddress: document.getElementById('uniswapRouterAddress').value,
+                wormholeAddress: document.getElementById('wormholeAddress').value,
+                solanaChainId: document.getElementById('solanaChainId').value,
+                uniswapxRouterAddress: document.getElementById('uniswapxRouterAddress').value,
+                userAccount: document.getElementById('userAccount').value,
+                privateKey: document.getElementById('privateKey').value,
+            };
+            try {
+                const response = await axios.post('http://localhost:5000/deploy', data);
+                alert('Contracts deployed! Transaction Hash: ' + response.data.txHash);
+            } catch (error) {
+                console.error(error);
+                alert('Error deploying contracts');
+            }
+        });
+    </script>
+</body>
+</html>
