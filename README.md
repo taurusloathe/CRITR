@@ -14,9 +14,9 @@ Run the provided python file 'token_price_calculator.py' to calculate how many o
 # Updates:
 # Cross-Chain Bridge
 The constructor of the token contract deployed from the factory contract will initialize the Wormhole bridge contract and the Solana chain ID, allowing users to exchange the token they deploy for Solana.
-![1000021177](https://github.com/taurusloathe/CRITR/assets/110080228/56657172-296f-4344-9a81-97efa5ee4c28)
-![1000021176](https://github.com/taurusloathe/CRITR/assets/110080228/d6074f4f-1711-4758-ab17-506e6e4b1d30)
-![1000021087](https://github.com/taurusloathe/CRITR/assets/110080228/19785f67-b96e-4399-b269-142db193ee4f)
+![1000021087](https://github.com/taurusloathe/CRITR/assets/110080228/0c2886e8-6534-447f-b7de-8a764e1d8b58)
+![1000021176](https://github.com/taurusloathe/CRITR/assets/110080228/899ba30d-1dd5-4213-9fc2-f2c69b7a9390)
+![1000021177](https://github.com/taurusloathe/CRITR/assets/110080228/71329df7-a7db-4d0d-b410-88bfef3df253)
 
 # UniswapX Protocol Integration
 UniswapX aggregates both onchain and offchain liquidity, internalizes MEV in the form of price improvement, offers gas-free swaps, and can be extended to support cross-chain trading. You can access the full UniswapX whitepaper here: https://uniswap.org/whitepaper-uniswapx.pdf
