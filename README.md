@@ -5,7 +5,7 @@ The app deploys a factory smart contract that deploys both a token contract and 
 The app user can exchange their tokens for Ethereum, or any ERC-20 based token in Uniswap.
 # How it works:
 The token contract that is deployed by users leverages an exponential bonding curve with a divisor of 500 that raises the price of the users' token. Everytime the user adds more to their account (buys more of their own token), their initial deposit value increases exponentially.
-![1000021157](https://github.com/taurusloathe/CRITR-App/assets/110080228/7078ef0d-1bcb-44e2-ad05-d316f732df1f)
+![1000021157](https://github.com/taurusloathe/CRITR-App/assets/110080228/89333138-ea05-4375-882e-0dc6ee6f522f)
 
 Run the provided python file 'token_price_calculator.py' to calculate how many of your tokens to purchase to reach your personal price target.
 ![1000021158](https://github.com/taurusloathe/CRITR-App/assets/110080228/550a48a7-40be-4884-980e-2a33c60f2981)
