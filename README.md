@@ -7,6 +7,8 @@ The app user can exchange their tokens gas-free for any token in Uniswap.
 The token contract that is deployed by users leverages an exponential bonding curve with a divisor of 500 that raises the value of the users' token. Everytime the user adds more to their account (buys more of their own token), their initial deposit value increases exponentially.
 ![1000021199](https://github.com/taurusloathe/CRITR/assets/110080228/7d098885-6b08-424c-b15d-330a66b70031)
 ![1000021200](https://github.com/taurusloathe/CRITR/assets/110080228/642bcfd2-991c-463d-a192-0150a6a534c5)
+![1000021208](https://github.com/taurusloathe/CRITR/assets/110080228/9bdebcf2-9086-4f27-94bc-c5f3ea31864f)
+
 
 Your token starts at 0.00001 ETH (approx. $0.03) per token. You can get up to 6,000 tokens at this initial price.
 Run the provided python file 'token_price_calculator.py' to calculate how many of your tokens to purchase after initial deposit to reach your personal price target.
