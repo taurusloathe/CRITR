@@ -6,6 +6,8 @@
     <title>CRITR</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <script type="module" src="https://www.unpkg.com/@wormhole-foundation/wormhole-connect@0.3.0-beta.9-development/dist/main.js" defer></script>
+    <link rel="stylesheet" href="https://www.unpkg.com/@wormhole-foundation/wormhole-connect@0.3.0-beta.9-development/dist/main.css" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,14 +18,18 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            overflow-y: auto;
         }
         .container {
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            width: 400px;
+            width: 90%;
+            max-width: 400px;
             text-align: center;
+            overflow-y: auto;
+            max-height: 90vh;
         }
         h1 {
             color: #ffffff;
@@ -67,9 +73,12 @@
             background: #45a049;
         }
         .logo {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 0px;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 10px;
+        }
+        #wormhole-connect {
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -90,6 +99,16 @@
             <input type="password" id="privateKey" placeholder="Your Private Key" required>
             <button type="submit">Deploy Contracts</button>
         </form>
+        <!-- Token Price Calculator -->
+        <h2>Token Price Calculator</h2>
+        <form id="priceCalculatorForm">
+            <input type="number" id="totalTokensSold" placeholder="Total Tokens Sold" required>
+            <input type="number" id="tokensToBuy" placeholder="Tokens to Buy" required>
+            <button type="button" onclick="calculateTokenPrice()">Calculate Price</button>
+        </form>
+        <p id="totalPrice"></p>
+        <!-- Mounting point for Wormhole Connect -->
+        <div id="wormhole-connect"></div>
     </div>
 
     <script>
@@ -132,6 +151,35 @@
                 alert('Error deploying contracts');
             }
         });
+
+        function calculateExponentialCurvePriceAfterFloor(initialPrice, priceFloorLimit, totalTokensSold, tokensToBuy) {
+            let totalPrice = 0;
+
+            for (let i = 0; i < tokensToBuy; i++) {
+                let currentTokenIndex = totalTokensSold + i;
+                if (currentTokenIndex < priceFloorLimit) {
+                    totalPrice += initialPrice;
+                } else {
+                    let exponentialPrice = initialPrice * (2 ** ((currentTokenIndex - priceFloorLimit) / 500));
+                    totalPrice += exponentialPrice;
+                }
+            }
+
+            return totalPrice;
+        }
+
+        function calculateTokenPrice() {
+            const initialPrice = 10000000000000; // 0.00001 ETH in wei
+            const priceFloorLimit = 5999; // First 5,999 tokens sold at initial price
+
+            const totalTokensSold = parseInt(document.getElementById('totalTokensSold').value);
+            const tokensToBuy = parseInt(document.getElementById('tokensToBuy').value);
+
+            const totalCost = calculateExponentialCurvePriceAfterFloor(initialPrice, priceFloorLimit, totalTokensSold, tokensToBuy);
+            const totalCostInEth = totalCost / 1e18; // Convert wei to ETH
+
+            document.getElementById('totalPrice').innerText = `The total price for ${tokensToBuy} tokens is: ${totalCostInEth} ETH`;
+        }
     </script>
 </body>
 </html>
