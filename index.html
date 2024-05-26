@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRITR</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -76,6 +77,7 @@
     <div class="container">
         <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/CRITR App/Polish_20240225_192414755.png" alt="CRITR Logo" class="logo">
         <h1>CRITR</h1>
+        <button id="connectWallet">Connect Wallet</button>
         <form id="deployForm">
             <input type="text" id="tokenName" placeholder="Token Name" required>
             <input type="text" id="tokenSymbol" placeholder="Token Symbol" required>
@@ -91,6 +93,24 @@
     </div>
 
     <script>
+        let web3;
+
+        document.getElementById('connectWallet').addEventListener('click', async function() {
+            if (window.ethereum) {
+                web3 = new Web3(window.ethereum);
+                try {
+                    await window.ethereum.request({ method: 'eth_requestAccounts' });
+                    const accounts = await web3.eth.getAccounts();
+                    document.getElementById('userAccount').value = accounts[0];
+                    alert('Wallet connected: ' + accounts[0]);
+                } catch (error) {
+                    console.error('User denied account access', error);
+                }
+            } else {
+                alert('Please install MetaMask!');
+            }
+        });
+
         document.getElementById('deployForm').addEventListener('submit', async function(event) {
             event.preventDefault();
             const data = {
