@@ -11,12 +11,6 @@ Your token starts at 0.00001 ETH (approx. $0.03) per token. You can get up to 6,
 ![1000021200](https://github.com/taurusloathe/CRITR/assets/110080228/642bcfd2-991c-463d-a192-0150a6a534c5)
 ![1000021208](https://github.com/taurusloathe/CRITR/assets/110080228/9bdebcf2-9086-4f27-94bc-c5f3ea31864f)
 
-
-Your token starts at 0.00001 ETH (approx. $0.03) per token. You can get up to 6,000 tokens at this initial price.
-Run the provided python file 'token_price_calculator.py' to calculate how many of your tokens to purchase after initial deposit to reach your personal price target.
-
-![1000021158](https://github.com/taurusloathe/CRITR-App/assets/110080228/550a48a7-40be-4884-980e-2a33c60f2981)
-
 # Updates:
 # Wormhole SDK Cross-Chain Bridge Integration 
 The constructor of the token contract deployed from the factory contract will initialize the Wormhole bridge contract and the Solana chain ID, allowing users to exchange the token they deploy for Solana and other tokens. 
