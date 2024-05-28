@@ -10,7 +10,12 @@ Only the app user has access to the contract controls and their custom token. Th
 
 Your token starts at 0.00001 ETH (approx. $0.03) per token. You can get up to 6,000 tokens at this initial price. Use the Token Price Calculator to calculate how many of your tokens to purchase after initial deposit to reach your personal price target.
 
-![1000021242](https://github.com/taurusloathe/CRITR/assets/110080228/b463ca5e-3e91-4afb-a80a-9929cbfac632)
+![1000021242](https://github.com/taurusloathe/CRITR/assets/110080228/6a7c8fba-1986-48b7-bef7-7d3dfddd6f06)
+
+Example:
+
+![1000021242](https://github.com/taurusloathe/CRITR/assets/110080228/40a12549-2fe6-4789-819c-ddeab8a84bdf)
+
 ![1000021200](https://github.com/taurusloathe/CRITR/assets/110080228/642bcfd2-991c-463d-a192-0150a6a534c5)
 ![1000021208](https://github.com/taurusloathe/CRITR/assets/110080228/9bdebcf2-9086-4f27-94bc-c5f3ea31864f)
 
