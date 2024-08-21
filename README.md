@@ -19,14 +19,6 @@ Wormhole SDK Integration for gasless swaps across a variety of blockchains:
 ![1000021200](https://github.com/taurusloathe/CRITR/assets/110080228/642bcfd2-991c-463d-a192-0150a6a534c5)
 ![1000021208](https://github.com/taurusloathe/CRITR/assets/110080228/9bdebcf2-9086-4f27-94bc-c5f3ea31864f)
 
-# Updates:
-# Wormhole SDK Cross-Chain Bridge Integration 
-The constructor of the token contract deployed from the factory contract will initialize the Wormhole bridge contract and the Solana chain ID, allowing users to exchange the token they deploy for Solana and other tokens. 
-https://www.npmjs.com/package/@certusone/wormhole-sdk
-![1000021087](https://github.com/taurusloathe/CRITR/assets/110080228/0c2886e8-6534-447f-b7de-8a764e1d8b58)
-![1000021176](https://github.com/taurusloathe/CRITR/assets/110080228/899ba30d-1dd5-4213-9fc2-f2c69b7a9390)
-![1000021177](https://github.com/taurusloathe/CRITR/assets/110080228/71329df7-a7db-4d0d-b410-88bfef3df253)
-
 # UniswapX Protocol Integration
 UniswapX aggregates both onchain and offchain liquidity, internalizes MEV in the form of price improvement, offers gas-free swaps, and can be extended to support cross-chain trading. You can access the full UniswapX whitepaper here: https://uniswap.org/whitepaper-uniswapx.pdf
 ![1000021092](https://github.com/taurusloathe/CRITR/assets/110080228/eb2373df-92d0-493a-b6a8-ff8c47d758b1)
