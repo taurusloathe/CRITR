@@ -2,7 +2,7 @@
 A savings app under construction that is restricted to individuals whose income is under $100,000 per year. Your savings increase exponentially in value upon deposits after deposit of 0.06 ETH. The deposit covers the cost to deploy your token contracts.
 ![1000025075](https://github.com/user-attachments/assets/353673fb-89fc-4527-9603-692692aaaa61)
 
-After income verification through the WealthEngine API, the app will allow the user to deploy a factory smart contract that deploys both a token contract and a price oracle contract for that token simultaneously. Before deployment, the app user will be able to customize the name of their savings token in the apps user interface, then the app will deploy their token to the ETH blockchain, allowing for the app user to purchase their own tokens.
+Income verification is determined through the WealthEngine API when the user provides their email address. Once this is completed, the app will allow the user to deploy a factory smart contract that deploys both a token contract and a price oracle contract for that token simultaneously. Before deployment, the app user will be able to customize the name of their savings token in the apps user interface, then the app will deploy their token to the ETH blockchain, allowing for the app user to purchase their own tokens.
 The app user can exchange their tokens gas-free for any token in Uniswap.
 # How it works:
 Only the app user has access to the contract controls and their custom token. The token contract that is deployed by users leverages an exponential bonding curve with a divisor of 500 that raises the value of the users' token. Everytime the user adds more to their account (buys more of their own token), their initial deposit value increases exponentially.
