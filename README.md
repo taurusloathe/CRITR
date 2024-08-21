@@ -15,10 +15,6 @@ Example:
 
 ![1000021242](https://github.com/taurusloathe/CRITR/assets/110080228/40a12549-2fe6-4789-819c-ddeab8a84bdf)
 
-Wormhole SDK Integration for gasless swaps across a variety of blockchains:
-![1000021200](https://github.com/taurusloathe/CRITR/assets/110080228/642bcfd2-991c-463d-a192-0150a6a534c5)
-![1000021208](https://github.com/taurusloathe/CRITR/assets/110080228/9bdebcf2-9086-4f27-94bc-c5f3ea31864f)
-
 # UniswapX Protocol Integration
 UniswapX aggregates both onchain and offchain liquidity, internalizes MEV in the form of price improvement, offers gas-free swaps, and can be extended to support cross-chain trading. You can access the full UniswapX whitepaper here: https://uniswap.org/whitepaper-uniswapx.pdf
 ![1000021092](https://github.com/taurusloathe/CRITR/assets/110080228/eb2373df-92d0-493a-b6a8-ff8c47d758b1)
