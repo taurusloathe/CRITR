@@ -1,6 +1,7 @@
 # CRITR
-A savings app under construction that increases exponentially in value upon deposits after deposit of 0.06 ETH. The deposit covers the cost to deploy your token contracts.
-![Polish_20240225_192414755](https://github.com/taurusloathe/CRITR-Token/assets/110080228/2343bf36-819d-4651-b169-b8cdf7caa281)
+A savings app under construction that is restricted to individuals whose income is under $100,000 per year. Your savings increase exponentially in value upon deposits after deposit of 0.06 ETH. The deposit covers the cost to deploy your token contracts.
+![1000025075](https://github.com/user-attachments/assets/353673fb-89fc-4527-9603-692692aaaa61)
+
 The app deploys a factory smart contract that deploys both a token contract and a price oracle contract for that token simultaneously. Before deployment, the app user will be able to customize the name of their savings token in the apps user interface, then the app will deploy their token to the ETH blockchain, allowing for the app user to purchase their own tokens.
 The app user can exchange their tokens gas-free for any token in Uniswap.
 # How it works:
