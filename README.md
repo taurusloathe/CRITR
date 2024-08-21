@@ -1,5 +1,5 @@
 # CRITR
-A savings app under construction that is restricted to individuals whose income is under $100,000 per year. Your savings increase exponentially in value upon deposits after a deposit of 0.06 ETH.
+A savings app under construction that is restricted to individuals whose income is under $100,000 per year. Your savings is stored in the form of your own customizable ETH-based token, and the value increass exponentially upon deposits after an initial deposit of 0.06 ETH.
 ![1000025075](https://github.com/user-attachments/assets/353673fb-89fc-4527-9603-692692aaaa61)
 
 Income verification is determined through the WealthEngine API when the user provides their email address. Once this is completed, the app will allow the user to deploy a factory smart contract that deploys both a token contract and a price oracle contract for that token simultaneously. Before deployment, the app user will be able to customize the name of their savings token in the apps user interface, then the app will deploy their token to the ETH blockchain, allowing for the app user to purchase their own tokens.
