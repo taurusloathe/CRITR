@@ -8,7 +8,7 @@ The app user can exchange their tokens gas-free for any token in Uniswap.
 # How it works:
 Only the app user has access to the contract controls and their custom token. The token contract that is deployed by users leverages an exponential bonding curve with a divisor of 500 that raises the value of the users' token. Everytime the user adds more to their account (buys more of their own token), their initial deposit value increases exponentially.
 
-![1000025073](https://github.com/user-attachments/assets/8a908abd-1bda-4c8e-8731-8521cdb4ec3c)
+![1000025789](https://github.com/user-attachments/assets/9cb56f9e-9db9-4c17-a4fb-38e706f88c0f)
 
 Your token starts at 0.00001 ETH (approx. $0.03) per token. You can get up to 6,000 tokens at this initial price. Use the Token Price Calculator to calculate how many of your tokens to purchase after initial deposit to reach your personal price target.
 
